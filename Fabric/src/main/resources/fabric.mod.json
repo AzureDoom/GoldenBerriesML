@@ -1,0 +1,41 @@
+{
+    "schemaVersion": 1,
+    "id": "rename",
+    "version": "${version}",
+    "name": "Rename",
+    "description": "This is an example description! Tell everyone what your mod is about!",
+    "authors": [
+      "AzureDoom"
+    ],
+    "contact": {
+      "homepage": "https://fabricmc.net/",
+      "sources": "https://github.com/AzureDoom/Azure-MultiLoader-Template"
+    },
+    "license": "MIT",
+    "icon": "icon.png",
+    "environment": "*",
+    "entrypoints": {
+      "main": [
+        "mod.azure.rename.RenameMod"
+      ],
+      "client" : [
+        "mod.azure.rename.client.RenameModFabricClient"
+      ]
+    },
+    "mixins": [
+      "rename.mixins.json",
+      "rename.fabric.mixins.json"
+    ],
+    "depends": {
+      "fabricloader": ">=0.14",
+      "fabric": "*",
+      "minecraft": "1.19.3",
+      "azurelib": ">=1.0.2",
+      "java": ">=17"
+    },
+    "suggests": {
+      "another-mod": "*"
+    },
+    "accessWidener": "rename_common.accesswidener"
+  }
+  

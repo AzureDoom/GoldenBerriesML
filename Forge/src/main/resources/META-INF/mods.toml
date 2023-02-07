@@ -1,0 +1,31 @@
+modLoader="javafml" 
+loaderVersion="[44,)" 
+license="MIT"
+[[mods]] 
+modId="rename" 
+version="${file.jarVersion}" 
+displayName="Rename" 
+logoFile="icon.png"
+authors="AzureDoom"
+description='''
+This is a long form description of the mod. You can write whatever you want here. 
+'''
+[[dependencies.rename]] 
+    modId="forge" 
+    mandatory=true 
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rename]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
+[[dependencies.rename]]
+    modId="azurelib"
+    mandatory=true
+    versionRange="[1.0.2,)"
+    ordering="NONE"
+    side="BOTH"
+

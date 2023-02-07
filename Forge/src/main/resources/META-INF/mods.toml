@@ -2,30 +2,23 @@ modLoader="javafml"
 loaderVersion="[44,)" 
 license="MIT"
 [[mods]] 
-modId="rename" 
+modId="goldenberry"
 version="${file.jarVersion}" 
-displayName="Rename" 
+displayName="Golden Berries"
 logoFile="icon.png"
 authors="AzureDoom"
 description='''
-This is a long form description of the mod. You can write whatever you want here. 
+Adds a Golden Berry that is similar to the Golden Carrot.
 '''
-[[dependencies.rename]] 
+[[dependencies.goldenberry]]
     modId="forge" 
     mandatory=true 
     versionRange="[44,)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.rename]]
+[[dependencies.goldenberry]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19.3,1.20)"
     ordering="NONE"
     side="BOTH"
-[[dependencies.rename]]
-    modId="azurelib"
-    mandatory=true
-    versionRange="[1.0.2,)"
-    ordering="NONE"
-    side="BOTH"
-

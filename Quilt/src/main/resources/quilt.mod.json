@@ -1,27 +1,24 @@
 {
   "schema_version": 1,
   "quilt_loader": {
-    "group": "mod.azure.rename",
-    "id": "rename",
+    "group": "mod.azure.goldenberry",
+    "id": "goldenberry",
     "version": "${version}",
     "metadata": {
-      "name": "Rename",
-      "description": "Description",
+      "name": "Golden Berries",
+      "description": "Adds a Golden Berry that is similar to the Golden Carrot.",
       "contributors": {
         "AzureDoom": "Author"
       },
       "contact": {
-        "sources": "https://github.com/AzureDoom/Azure-MultiLoader-Template"
+        "sources": "https://github.com/AzureDoom/GoldenBerriesML"
       },
       "icon": "icon.png"
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
       "init": [
-        "mod.azure.rename.RenameMod"
-      ],
-      "client_init": [
-        "mod.azure.rename.client.RenameModQuiltClient"
+        "mod.azure.goldenberry.GoldenBerriesMod"
       ]
     },
     "depends": [
@@ -32,10 +29,6 @@
       {
         "id": "minecraft",
         "versions": ">=1.19.3"
-      },
-      {
-        "id": "azurelib",
-        "versions": ">=1.0.2"
       },
       {
         "id": "quilt_base",

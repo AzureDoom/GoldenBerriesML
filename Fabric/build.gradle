@@ -70,3 +70,54 @@ tasks.withType(JavaCompile) {
     source(project(":Common").sourceSets.main.allSource)
 }
 
+if (file('key.properties').exists()) {
+    curseforge {
+        def curseProp = new Properties()
+        File secretPropsFile = file("key.properties")
+        curseProp.load(secretPropsFile.newInputStream())
+
+        project {
+            apiKey = curseProp.getProperty('curseKey')
+            id = "402964"
+            releaseType = "release"
+            changelogType = 'text'
+            changelog = file('CHANGELOG.txt')
+            addGameVersion("1.19.3")
+            addGameVersion("Fabric")
+            addGameVersion("Java 17")
+
+            relations {
+                requiredDependency 'fabric-api'
+            }
+            mainArtifact(remapJar)
+
+            afterEvaluate {
+                uploadTask.dependsOn("remapJar")
+            }
+        }
+        options {
+            //debug = true
+            forgeGradleIntegration = false
+        }
+    }
+}
+
+if (file('key.properties').exists()) {
+    modrinth {
+        def modrinthProp = new Properties()
+        File secretPropsFile = file("key.properties")
+        modrinthProp.load(secretPropsFile.newInputStream())
+
+        token = modrinthProp.getProperty('modrinthKey')
+        projectId = 'v2ZRwtDV'
+        versionNumber = project.version
+        versionName = '1.19.3 Fabric'
+        uploadFile = remapJar
+        changelog = rootProject.file("changelog.txt").text
+        gameVersions = ['1.19.3']
+        loaders = ['fabric']
+        dependencies {
+            required.project "fabric-api"
+        }
+    }
+}

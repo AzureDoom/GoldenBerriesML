@@ -30,7 +30,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 archivesBaseName = "${mod_name}-forge-${minecraft_version}"
 
 minecraft {
-    mappings channel: 'parchment', version: "${parchment_version}-${parchment_minecraft_version}"
+    mappings channel: 'official', version: '1.19.4'
     if (project.hasProperty('forge_ats_enabled') && project.findProperty('forge_ats_enabled').toBoolean()) {
         // This location is hardcoded in Forge and can not be changed.
         // https://github.com/MinecraftForge/MinecraftForge/blob/be1698bb1554f9c8fa2f58e32b9ab70bc4385e60/fmlloader/src/main/java/net/minecraftforge/fml/loading/moddiscovery/ModFile.java#L123
@@ -94,9 +94,7 @@ configurations {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
     compileOnly project(":Common")
-    implementation fg.deobf("mod.azure.azurelib:azurelib-forge-1.19.3:${azurelib_version_forge}")
     annotationProcessor("org.spongepowered:mixin:0.8.5-SNAPSHOT:processor")
-    implementation fg.deobf('mysticdrew:common-networking:1.0.0+1.19.3-forge')
 }
 
 tasks.withType(JavaCompile) {
@@ -129,6 +127,7 @@ if (file('key.properties').exists()) {
             changelogType = 'text'
             changelog = file('CHANGELOG.txt')
             addGameVersion("1.19.3")
+            addGameVersion("1.19.4")
             addGameVersion("Forge")
             addGameVersion("Java 17")
         }
@@ -144,10 +143,10 @@ if (file('key.properties').exists()) {
         token = modrinthProp.getProperty('modrinthKey')
         projectId = 'v2ZRwtDV'
         versionNumber = project.version
-        versionName = '1.19.3 Forge'
+        versionName = '1.19.3/4 Forge'
         uploadFile = jar
         changelog = rootProject.file("changelog.txt").text
-        gameVersions = ['1.19.3']
+        gameVersions = ['1.19.3','1.19.4']
         loaders = ['forge']
     }
 }

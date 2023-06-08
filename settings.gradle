@@ -36,5 +36,5 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'Geckolib-MultiloaderExample'
+rootProject.name = 'GoldenBerries-MultiloaderExample'
 include("Common", "Forge", "Quilt", "Fabric")

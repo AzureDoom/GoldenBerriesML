@@ -11,7 +11,7 @@ buildscript {
 }
 
 plugins {
-    id 'fabric-loom' version '1.0-SNAPSHOT'
+    id 'fabric-loom' version '1.2-SNAPSHOT'
     id 'maven-publish'
     id 'idea'
     id 'com.github.johnrengelman.shadow' version '7.1.0'
@@ -79,8 +79,7 @@ if (file('key.properties').exists()) {
             releaseType = "release"
             changelogType = 'text'
             changelog = file('CHANGELOG.txt')
-            addGameVersion("1.19.3")
-            addGameVersion("1.19.4")
+            addGameVersion("1.20")
             addGameVersion("Fabric")
             addGameVersion("Java 17")
 
@@ -109,10 +108,10 @@ if (file('key.properties').exists()) {
         token = modrinthProp.getProperty('modrinthKey')
         projectId = 'v2ZRwtDV'
         versionNumber = project.version
-        versionName = '1.19.3/4 Fabric'
+        versionName = '1.20 Fabric'
         uploadFile = remapJar
         changelog = rootProject.file("changelog.txt").text
-        gameVersions = ['1.19.3','1.19.4']
+        gameVersions = ['1.20']
         loaders = ['fabric']
         dependencies {
             required.project "fabric-api"

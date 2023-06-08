@@ -16,7 +16,6 @@ javadoc.enabled(false)
 
 dependencies {
     compileOnly "org.spongepowered:mixin:0.8.5"
-    compileOnly "mod.azure.azurelib:azurelib-forge-1.19.3:${azurelib_version_forge}"
     implementation 'mysticdrew:common-networking:1.0.0+1.19.3-common'
 }
 

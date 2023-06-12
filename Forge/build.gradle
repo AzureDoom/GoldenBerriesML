@@ -30,7 +30,7 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 archivesBaseName = "${mod_name}-forge-${minecraft_version}"
 
 minecraft {
-    mappings channel: 'official', version: '1.19.4'
+    mappings channel: 'official', version: '1.20.1'
     if (project.hasProperty('forge_ats_enabled') && project.findProperty('forge_ats_enabled').toBoolean()) {
         // This location is hardcoded in Forge and can not be changed.
         // https://github.com/MinecraftForge/MinecraftForge/blob/be1698bb1554f9c8fa2f58e32b9ab70bc4385e60/fmlloader/src/main/java/net/minecraftforge/fml/loading/moddiscovery/ModFile.java#L123
@@ -126,7 +126,7 @@ if (file('key.properties').exists()) {
             releaseType = "release"
             changelogType = 'text'
             changelog = file('CHANGELOG.txt')
-            addGameVersion("1.20")
+            addGameVersion("1.20.1")
             addGameVersion("Forge")
             addGameVersion("Java 17")
         }
@@ -142,10 +142,10 @@ if (file('key.properties').exists()) {
         token = modrinthProp.getProperty('modrinthKey')
         projectId = 'v2ZRwtDV'
         versionNumber = project.version
-        versionName = '1.20 Forge'
+        versionName = '1.20.1 Forge'
         uploadFile = jar
         changelog = rootProject.file("changelog.txt").text
-        gameVersions = ['1.20']
+        gameVersions = ['1.20.1']
         loaders = ['forge']
     }
 }
